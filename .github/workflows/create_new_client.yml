@@ -1,0 +1,21 @@
+name: Notify on New Client Creation
+
+on:
+  workflow_dispatch:  # Allows manual triggering from GitHub Actions UI
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Create a new client (Simulated)
+        run: |
+          echo "Creating a new client..."
+          echo "Client 'John Doe' created successfully."
+
+      - name: Notify team about new client
+        run: |
+          echo "New client created: John Doe"
